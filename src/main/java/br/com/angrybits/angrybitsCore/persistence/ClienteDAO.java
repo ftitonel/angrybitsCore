@@ -22,11 +22,11 @@ public class ClienteDAO extends JPACrud<Cliente, Long> {
 	public static ClienteDAO getInstance() {
         return Beans.getReference(ClienteDAO.class);
 	}
-
+	@SuppressWarnings("unchecked")
 	public List<Cliente> findByEmail(String email) {		
 		String hql = "SELECT Cliente FROM Cliente cliente WHERE cliente.usuario_email=:usuario_email";
 		Query query = getEntityManager().createQuery(hql);
-		query.setParameter("usuario_email", email.trim());
+		query.setParameter("usuario_email", email.trim());		
 		List<Cliente> cliente = query.getResultList();
 		return cliente;
 	}
