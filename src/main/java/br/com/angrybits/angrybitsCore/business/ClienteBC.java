@@ -5,11 +5,13 @@ import java.util.List;
 import br.com.angrybits.angrybitsCore.entity.Cliente;
 import br.com.angrybits.angrybitsCore.persistence.ClienteDAO;
 import br.gov.frameworkdemoiselle.stereotype.BusinessController;
+import br.gov.frameworkdemoiselle.stereotype.Controller;
 import br.gov.frameworkdemoiselle.template.DelegateCrud;
 import br.gov.frameworkdemoiselle.transaction.Transactional;
 
 @BusinessController
 @Transactional
+@Controller
 public class ClienteBC extends DelegateCrud<Cliente, Long, ClienteDAO>{
 
 	/**
@@ -21,7 +23,7 @@ public class ClienteBC extends DelegateCrud<Cliente, Long, ClienteDAO>{
 		try {
 			return ClienteDAO.getInstance().findByEmail(email);
 		} catch (Exception e) {
-			//e.printStackTrace();
+			e.printStackTrace();
 			return null;
 		}
 	}

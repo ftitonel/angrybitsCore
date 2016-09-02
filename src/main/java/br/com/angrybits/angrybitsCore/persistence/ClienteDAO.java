@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Query;
 
 import br.com.angrybits.angrybitsCore.entity.Cliente;
+import br.gov.frameworkdemoiselle.stereotype.Controller;
 import br.gov.frameworkdemoiselle.stereotype.PersistenceController;
 import br.gov.frameworkdemoiselle.template.JPACrud;
 import br.gov.frameworkdemoiselle.transaction.Transactional;
@@ -12,6 +13,7 @@ import br.gov.frameworkdemoiselle.util.Beans;
 
 @PersistenceController
 @Transactional
+@Controller
 public class ClienteDAO extends JPACrud<Cliente, Long> {
 
 	/**
