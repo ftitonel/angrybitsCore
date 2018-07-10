@@ -38,7 +38,7 @@ public class Consumo implements Serializable{
 	private List<ConsumoChamadas> consumoChamdas;
 	@ManyToOne
 	@JoinColumn(name="cliente_id")
-	private Cliente cliente;
+	private Usuario cliente;
 	
 	public Consumo() {
 		// TODO Auto-generated constructor stub
@@ -97,11 +97,11 @@ public class Consumo implements Serializable{
 		this.consumoChamdas = consumoChamdas;
 	}
 
-	public Cliente getCliente() {
+	public Usuario getCliente() {
 		return cliente;
 	}
 
-	public void setCliente(Cliente cliente) {
+	public void setCliente(Usuario cliente) {
 		this.cliente = cliente;
 	}
 	

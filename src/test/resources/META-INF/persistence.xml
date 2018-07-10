@@ -12,7 +12,7 @@
 		<class>br.com.angrybits.angrybitsCore.entity.Consumo</class>
 		<class>br.com.angrybits.angrybitsCore.entity.ConsumoDados</class>
 		<class>br.com.angrybits.angrybitsCore.entity.ConsumoChamadas</class>
-		<class>br.com.angrybits.angrybitsCore.entity.Cliente</class>
+		<class>br.com.angrybits.angrybitsCore.entity.Usuario</class>
 		<class>br.com.angrybits.angrybitsCore.entity.Token</class>
 
 

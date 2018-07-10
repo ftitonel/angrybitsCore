@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Cliente implements Serializable{
+public class Usuario implements Serializable{
 		
 	/**
 	 * 
@@ -29,11 +29,11 @@ public class Cliente implements Serializable{
 	@OneToOne(cascade=CascadeType.PERSIST, fetch=FetchType.EAGER)
 	private Token token;
 	
-	public Cliente() {
+	public Usuario() {
 		// TODO Auto-generated constructor stub
 	}	
 	
-	public Cliente(String usuario_email, String usuario_celular, String tipo_usuario, Token token,
+	public Usuario(String usuario_email, String usuario_celular, String tipo_usuario, Token token,
 			List<Consumo> consumo) {
 		super();
 		this.usuario_email = usuario_email;
@@ -61,7 +61,7 @@ public class Cliente implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Cliente other = (Cliente) obj;
+		Usuario other = (Usuario) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

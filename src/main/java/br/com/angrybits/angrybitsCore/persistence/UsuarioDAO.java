@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.persistence.Query;
 
-import br.com.angrybits.angrybitsCore.entity.Cliente;
+import br.com.angrybits.angrybitsCore.entity.Usuario;
 import br.gov.frameworkdemoiselle.stereotype.Controller;
 import br.gov.frameworkdemoiselle.stereotype.PersistenceController;
 import br.gov.frameworkdemoiselle.template.JPACrud;
@@ -14,23 +14,20 @@ import br.gov.frameworkdemoiselle.util.Beans;
 @PersistenceController
 @Transactional
 @Controller
-public class ClienteDAO extends JPACrud<Cliente, Long> {
+public class UsuarioDAO extends JPACrud<Usuario, Long> {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public static ClienteDAO getInstance() {
-        return Beans.getReference(ClienteDAO.class);
-	}
 	@SuppressWarnings("unchecked")
-	public List<Cliente> findByEmail(String email) {		
-		String hql = "SELECT Cliente FROM Cliente cliente WHERE cliente.usuario_email=:usuario_email";
+	public List<Usuario> findByEmail(String email) {		
+		String hql = "SELECT usuario FROM Usuario usuario WHERE usuario.usuario_email=:usuario_email";
 		Query query = getEntityManager().createQuery(hql);
 		query.setParameter("usuario_email", email.trim());		
-		List<Cliente> cliente = query.getResultList();
-		return cliente;
+		List<Usuario> usuario = query.getResultList();
+		return usuario;
 	}
 
 }

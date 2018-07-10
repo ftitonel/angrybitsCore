@@ -27,7 +27,7 @@ public class Token implements Serializable{
 	private Date data_Atualizacao;
 	
 	@OneToOne(mappedBy="token")
-	private Cliente cliente;
+	private Usuario cliente;
 	
 	@Override
 	public int hashCode() {
@@ -69,10 +69,10 @@ public class Token implements Serializable{
 	public Long getId() {
 		return id;
 	}
-	public Cliente getCliente() {
+	public Usuario getCliente() {
 		return cliente;
 	}
-	public void setCliente(Cliente cliente) {
+	public void setCliente(Usuario cliente) {
 		this.cliente = cliente;
 	}	
 }
